@@ -1,0 +1,144 @@
+@import "utils/vars";
+@import "utils/mixins";
+
+* {
+  box-sizing: border-box;
+  color: $white;
+}
+
+.body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-image: url("../images/main-bg-image.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: $padding;
+}
+
+.container {
+  min-width: 320px;
+  @include onTablet {
+    max-width: 448px;
+  }
+  @include onDesktop {
+    max-width: 794px;
+  }
+}
+
+.header {
+  &__title {
+    color: $gold;
+    font-size: 62px;
+    font-weight: 400;
+    font-family: "Oswald", sans-serif;
+  }
+
+  &__subtitle {
+    font-family: "Oswald", sans-serif;
+  }
+
+  &__article {
+
+  }
+}
+
+.button {
+  color: $black;
+  border-radius: $border-radius;
+  height: 38px;
+  cursor: pointer;
+  border: 1px solid transparent;
+
+
+  transition: all 0.3s;
+
+  &:hover {
+    box-shadow: 1px 4px 16px rgba(232, 232, 240, 0.4);
+  }
+
+  &:active {
+    box-shadow: 1px 4px 16px rgba(232, 232, 240, 0.64);
+  }
+}
+
+.page {
+  font-family: "Roboto", sans-serif;
+  &__content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: calc(100% - 2 * $padding);
+    height: calc(100% - 2 * $padding);
+    border: 1px solid $gray;
+    border-radius: $border-radius;
+  }
+}
+
+.main {
+  border: 1px solid $gray;
+  border-radius: $border-radius;
+  padding: 50px;
+  backdrop-filter: blur(6px);
+
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+
+  &__field {
+    background-color: transparent;
+    color: #fff;
+    border: none;
+    border-bottom: 1px solid #fff;
+    margin-bottom: 40px;
+    padding-bottom: 16px;
+    text-decoration: none;
+    width: 100%;
+  
+    @include onTablet {
+      margin-bottom: 48px;
+    }
+  
+    &--textarea {
+      resize: none;
+      margin-bottom: 56px;
+  
+      @include onTablet {
+        margin-bottom: 80px;
+      }
+    }
+  
+    &:focus {
+      text-decoration: none;
+      outline: none;
+      border: none;
+      border-bottom: 2px solid $gold;
+    }
+  }
+}
+
+.footer {
+  font-family: "Oswald", sans-serif;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  // border: none;
+  -webkit-text-fill-color: $white;
+  -webkit-box-shadow: none;
+  background-color: transparent;
+  transition: background-color 5000s ease-in-out 0s;
+}

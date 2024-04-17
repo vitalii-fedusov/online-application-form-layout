@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en" class="page">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Application form</title>
+    <link rel="stylesheet" href="styles/style.scss" />
+    <script defer type="module" src="app.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Roboto:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="body">
+    <div class="page__content">
+      <div class="container">
+        <header class="header">
+          <h1 class="header__title">Онлайн заявка на співпрацю</h1>
+          <h2 class="header__subtitle">
+            Вітаємо! <br />
+            Дякуємо за цікавість до проєкту BGV Graphite.
+          </h2>
+          <article class="header__article">
+            Будь ласка, залиште ваші контакти та вкажіть тему вашого звернення,
+            і наша команда зв’яжеться з вами найближчим часом.
+          </article>
+        </header>
+
+        <main class="main">
+          <form action="/action_page.php" id="form" class="form">
+            <label>
+              <input
+                required
+                name="fullName"
+                placeholder="Ваші ПІБ"
+                type="text"
+                class="form__field"
+              />
+            </label>
+            <label>
+              <input
+                required
+                name="company"
+                placeholder="Яку компанію ви представляєте"
+                type="text"
+                class="form__field"
+              />
+            </label>
+            <label>
+              <input
+                required
+                name="position"
+                placeholder="Яка ваша посада"
+                type="text"
+                class="form__field"
+              />
+            </label>
+            <label>
+              <p>
+                Опишіть коротко питання, з яким ви бажаєте <br />
+                звернутись до команди нашого проєкту?
+              </p>
+              <textarea
+                required
+                name="message"
+                class="form__field form__field--textarea"
+              ></textarea>
+            </label>
+
+            <label>
+              <input
+                required
+                name="phone-number"
+                placeholder="Номер мобільного"
+                type="tel"
+                class="form__field"
+              />
+            </label>
+
+            <label>
+              <input
+                required
+                name="email"
+                placeholder="Електронна пошта"
+                type="email"
+                class="form__field"
+              />
+            </label>
+
+            <button type="submit" class="button">Відправити</button>
+            <div id="output-box"></div>
+          </form>
+        </main>
+
+        <footer class="footer">
+          <h2 class="footer__title">Дякуємо за приділену увагу!</h2>
+        </footer>
+      </div>
+    </div>
+  </body>
+</html>
