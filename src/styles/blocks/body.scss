@@ -10,5 +10,8 @@
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-  padding: $padding;
+  padding: 10px;
+  @include onTablet {
+    padding: $padding;
+  }
 }

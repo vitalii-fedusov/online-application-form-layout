@@ -2,8 +2,11 @@
 .main {
   border: 1px solid $gray;
   border-radius: $border-radius;
-  padding: 20px;
+  padding: 15px;
   @include onTablet {
+    padding: 30px;
+  }
+  @include onDesktop {
     padding: 50px;
   }
   backdrop-filter: blur(6px);

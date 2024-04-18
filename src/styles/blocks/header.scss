@@ -6,7 +6,7 @@
 
   &__title {
     color: $gold;
-    font-size: 48px;
+    font-size: 36px;
     font-weight: 400;
     font-family: "Oswald", sans-serif;
     text-transform: uppercase;
@@ -16,7 +16,7 @@
     margin-bottom: 24px;
     @include onTablet {
       margin-bottom: 36px;
-      font-size: 64px;
+      font-size: 48px;
     }
     @include onDesktop {
       margin-bottom: 48px;
