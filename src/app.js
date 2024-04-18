@@ -1,18 +1,27 @@
-
 const form = document.querySelector("#form");
 const phoneInput = document.querySelector("#phone");
 const emailInput = document.querySelector("#email");
 
 form.addEventListener("submit", onFormSubmit);
 
-const emailRegex = /^[\w.-]+@[a-zA-Z\d.-]+\.[a-zA-Z]{2,}$/;
-const phoneRegex = /^\+?\d{1,3}\d{9}$/;
+const emailRegex = /^[\p{L}\w.-]+@[a-zA-Z\d.-]+\.[a-zA-Z]{2,}$/u;
+const phoneRegex1 = /^\+\(\d{2}\)\d{10}$/;
+const phoneRegex2 = /^\+\d{3}\d{9}$/;
+const phoneRegex3 = /^\d{10}$/;
+const phoneRegex4 = /^\+\d{2}\s\d{3}\s\d{3}\s\d{2}\s\d{2}$/;
+const phoneRegex5 = /^\+\d{2}-\d{3}-\d{3}-\d{2}-\d{2}$/;
 
 function onFormSubmit(event) {
   event.preventDefault();
 
-  const phoneIsValid = phoneRegex.test(phoneInput.value);
-  const emailIsValid = emailRegex.test(emailInput.value);
+  const phoneIsValid =
+    phoneRegex1.test(phoneInput.value.trim()) ||
+    phoneRegex2.test(phoneInput.value.trim()) ||
+    phoneRegex3.test(phoneInput.value.trim()) ||
+    phoneRegex4.test(phoneInput.value.trim()) ||
+    phoneRegex5.test(phoneInput.value.trim());
+
+  const emailIsValid = emailRegex.test(emailInput.value.trim());
 
   if (!phoneIsValid) {
     phoneInput.classList.add("error");
@@ -32,26 +41,14 @@ function onFormSubmit(event) {
   window.alert("Дякуємо, ваша заявка прийнята!");
 }
 
-phoneInput.addEventListener("click", () => {
-  phoneInput.classList.remove('error');
-  phoneInput.value = '';
-})
+phoneInput.addEventListener("click", clearError);
+emailInput.addEventListener("click", clearError);
+emailInput.addEventListener("input", clearError);
+phoneInput.addEventListener("input", clearError);
 
-emailInput.addEventListener("click", () => {
-  emailInput.classList.remove('error');
-  emailInput.value = '';
-})
-
-emailInput.addEventListener("input", () => {
-  if (emailInput.classList.contains('error')) {
-    emailInput.classList.remove('error');
-    emailInput.value = '';
+function clearError() {
+  if (this.classList.contains("error")) {
+    this.classList.remove("error");
+    this.value = "";
   }
-})
-
-phoneInput.addEventListener("input", () => {
-  if (phoneInput.classList.contains('error')) {
-    phoneInput.classList.remove('error');
-    phoneInput.value = '';
-  }
-})
+}
