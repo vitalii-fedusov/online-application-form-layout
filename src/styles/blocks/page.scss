@@ -1,0 +1,14 @@
+
+.page {
+  font-family: "Roboto", sans-serif;
+  &__content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: calc(100% - 2 * $padding);
+    border: 1px solid $gray;
+    border-radius: $border-radius;
+    padding-inline: 30px;
+  }
+}

@@ -58,7 +58,7 @@
               />
             </label>
             <label>
-              <p>
+              <p class="form__paragraph">
                 Опишіть коротко питання, з яким ви бажаєте <br />
                 звернутись до команди нашого проєкту?
               </p>
@@ -66,25 +66,27 @@
                 required
                 name="message"
                 class="form__field form__field--textarea"
+                contenteditable="true"
               ></textarea>
             </label>
 
             <label>
+              <p class="form__paragraph form__paragraph--contacts">
+                Вкажіть контакти за якими ми можемо зв'язатись з вами:
+              </p>
               <input
-                required
+                id="phone"
                 name="phone-number"
                 placeholder="Номер мобільного"
-                type="tel"
                 class="form__field"
               />
             </label>
 
             <label>
               <input
-                required
+                id="email"
                 name="email"
                 placeholder="Електронна пошта"
-                type="email"
                 class="form__field"
               />
             </label>

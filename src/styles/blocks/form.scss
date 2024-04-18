@@ -1,0 +1,72 @@
+.form {
+  display: flex;
+  flex-direction: column;
+
+  &__paragraph {
+    margin-bottom: 16px;
+
+    &--contacts {
+      margin-bottom: 30px;
+    }
+  }
+
+  &__field {
+    background-color: transparent;
+    color: $white;
+    border: none;
+    border-bottom: 1px solid $gray;
+    margin-bottom: 20px;
+    padding-bottom: 16px;
+    text-decoration: none;
+    width: 100%;
+    font-size: 16px;
+
+    &::placeholder {
+      color: $light-gray;
+    }
+
+    @include onTablet {
+      margin-bottom: 30px;
+    }
+
+    &:focus {
+      text-decoration: none;
+      outline: none;
+      border: none;
+      border-bottom: 1px solid $gold;
+    }
+
+    &--textarea {
+      resize: none;
+      margin-bottom: 56px;
+      border: 1px solid $gray;
+      height: 168px;
+      margin-bottom: 30px;
+
+      &:focus {
+        border: 1px solid $gold;
+      }
+    }
+  }
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  border-color: $white;
+  -webkit-text-fill-color: $white;
+  caret-color: $white;
+  -webkit-box-shadow: none;
+  background-color: transparent;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+.error {
+  color: $red;
+}

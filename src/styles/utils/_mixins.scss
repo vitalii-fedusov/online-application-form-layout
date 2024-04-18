@@ -1,18 +1,3 @@
-@mixin hover($_property, $_toValue) {
-  transition: #{$_property} $transition-duration $animation-timing-function;
-
-  &:hover {
-    #{$_property}: $_toValue;
-  }
-}
-
-@mixin hoverScale {
-  transition: scale $transition-duration $animation-timing-function;
-
-  &:hover {
-    scale: $scale-value;
-  }
-}
 
 @mixin onTablet {
   @media (min-width: $tablet-min-width) {
@@ -20,20 +5,8 @@
   }
 }
 
-@mixin onLaptop {
-  @media (min-width: $laptop-min-width) {
-    @content;
-  }
-}
-
 @mixin onDesktop {
   @media (min-width: $desctop-min-width) {
-    @content;
-  }
-}
-
-@mixin onWideScreen {
-  @media (min-width: $wide-screeen-min-width) {
     @content;
   }
 }

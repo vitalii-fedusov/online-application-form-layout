@@ -1,0 +1,15 @@
+
+.footer {
+  &__title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Oswald", sans-serif;
+    color: $gold;
+    font-size: 24px;
+
+    @include onTablet {
+      font-size: 32px;
+    }
+  }
+}

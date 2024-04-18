@@ -1,0 +1,11 @@
+
+.main {
+  border: 1px solid $gray;
+  border-radius: $border-radius;
+  padding: 20px;
+  @include onTablet {
+    padding: 50px;
+  }
+  backdrop-filter: blur(6px);
+  max-width: $form-max-width;
+}
